@@ -139,6 +139,16 @@ export default function USBMonitorApp() {
         )}
 
         <View style={styles.infoCard}>
+          {/* ID Único */}
+          {connectedDevice.deviceHash && (
+            <InfoRow 
+              icon="🔑" 
+              label="ID Único"
+              value={connectedDevice.deviceHash}
+              onPress={() => copyToClipboard(connectedDevice.deviceHash || '')}
+            />
+          )}
+
           <InfoRow 
             icon="🏷️" 
             label="Nombre" 
@@ -187,16 +197,6 @@ export default function USBMonitorApp() {
               icon="🏢" 
               label="Fabricante" 
               value={connectedDevice.manufacturerName} 
-            />
-          )}
-
-          {/* Hash */}
-          {connectedDevice.deviceHash && (
-            <InfoRow 
-              icon="🔑" 
-              label="Hash" 
-              value={connectedDevice.deviceHash}
-              onPress={() => copyToClipboard(connectedDevice.deviceHash || '')}
             />
           )}
 
