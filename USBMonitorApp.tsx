@@ -190,13 +190,13 @@ export default function USBMonitorApp() {
             />
           )}
 
-          {/* ID único */}
-          {connectedDevice.uniqueIdentifier && (
+          {/* Hash */}
+          {connectedDevice.deviceHash && (
             <InfoRow 
               icon="🔑" 
-              label="ID Único" 
-              value={connectedDevice.uniqueIdentifier}
-              onPress={() => copyToClipboard(connectedDevice.uniqueIdentifier || '')}
+              label="Hash" 
+              value={connectedDevice.deviceHash}
+              onPress={() => copyToClipboard(connectedDevice.deviceHash || '')}
             />
           )}
 
